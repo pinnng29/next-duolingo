@@ -3,7 +3,7 @@
 export default function Home() {
   return (
     <div>
-      Hello Lingo
+      Landing Page!
     </div>
   )
 }
