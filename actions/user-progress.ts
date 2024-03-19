@@ -8,8 +8,7 @@ import db from "@/db/drizzle";
 import { auth, currentUser } from "@clerk/nextjs";
 import { getCourseById, getUserProgress } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
-
-const POINTS_TO_REFILL = 10;
+import { POINTS_TO_REFILL } from "@/constants";
 
 export const upsertUserProgress = async (courseId: number) => {
   const { userId } = await auth();

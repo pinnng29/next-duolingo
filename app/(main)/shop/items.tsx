@@ -23,8 +23,7 @@ export const Items = ({ hearts, points, hasActiveSubscription }: Props) => {
     }
 
     startTransition(() => {
-      refillHearts()
-        .catch(() => toast.error("Something went wrong!"))
+      refillHearts().catch(() => toast.error("Something went wrong!"));
     });
   };
 
@@ -59,6 +58,25 @@ export const Items = ({ hearts, points, hasActiveSubscription }: Props) => {
               <p>{POINTS_TO_REFILL}</p>
             </div>
           )}
+        </Button>
+      </div>
+      <div className="flex items-center w-full p-4 pt-8 gap-x-4 border-t-2">
+        <Image
+          src={"/unlimited.svg"}
+          alt="Unlimited"
+          width={60}
+          height={60}
+        />
+        <div className="flex-1">
+          <p className="text-neutral-700 text-base lg:text-lg font-bold">
+            Unlimited hearts
+          </p>
+        </div>
+        <Button
+          onClick={() => toast("Coming soon!")}
+          disabled={pending}
+        >
+          {hasActiveSubscription ? "settings" : "upgrade"}
         </Button>
       </div>
     </ul>
