@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 type Props = {
   onCheck: () => void;
   status: "correct" | "wrong" | "none" | "completed";
-  disabled: boolean;
-  lessonId?: boolean;
+  disabled?: boolean;
+  lessonId?: number;
 };
 
 export const Footer = ({ onCheck, status, disabled, lessonId }: Props) => {
